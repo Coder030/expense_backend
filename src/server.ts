@@ -1,7 +1,7 @@
 import express from "express"
 import cors from 'cors'
 
-const expensesList: string[] = [];
+const expenses: string[] = [];
 export const app = express()
 app.use(cors())
 app.use(express.json())
@@ -13,10 +13,10 @@ app.get('/', (req, res) => {
 })
 
 app.get('/full', (req, res) => {
-  res.json(expensesList)
+  res.json(expenses)
 })
 
 app.post('/', (req, res) => {
-  expensesList.push(req.body.expense)
-  res.json(expensesList)
+  expenses.push(req.body.expense)
+  res.json(expenses)
 })
