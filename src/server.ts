@@ -4,7 +4,7 @@ import prisma from "./db";
 
 const expenses: string[] = [];
 export const app = express()
-app.use(cors())
+app.use(cors({credentials: true, origin: 'http://localhost:3000/'}))
 app.use(express.json())
 
 
